@@ -4,7 +4,6 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.erif.roomdatabasedemo.R
-import com.erif.roomdatabasedemo.database.product.Product
 import com.erif.roomdatabasedemo.database.user.User
 
 class HolderUser(itemView: View) : RecyclerView.ViewHolder(itemView) {

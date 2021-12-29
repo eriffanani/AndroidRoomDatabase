@@ -1,16 +1,20 @@
 package com.erif.roomdatabasedemo.database.product
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface ProductDao {
 
-    @Query("SELECT * FROM product")
-    fun getAll(): List<Product>
+    @Query("SELECT * FROM table_product")
+    fun getAllProduct(): MutableList<Product>
 
-    @Insert
-    fun insert(vararg product: Product)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insert(product: Product)
+
+    @Query("DELETE FROM table_product WHERE id = :productId")
+    suspend fun delete(productId: Int)
+
+    @Query("SELECT * FROM table_product ORDER BY id DESC LIMIT 1")
+    fun getLastProduct(): Product
 
 }

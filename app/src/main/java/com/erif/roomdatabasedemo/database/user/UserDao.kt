@@ -5,17 +5,17 @@ import androidx.room.*
 @Dao
 interface UserDao {
 
-    @Query("SELECT * FROM user")
+    @Query("SELECT * FROM table_user")
     fun getAll(): List<User>
 
-    @Query("SELECT * FROM user WHERE id IN (:userIds)")
+    @Query("SELECT * FROM table_user WHERE id IN (:userIds)")
     fun loadAllByIds(userIds: IntArray): List<User>
 
-    @Query("SELECT * FROM user WHERE first_name LIKE :first AND last_name LIKE :last LIMIT 1")
+    @Query("SELECT * FROM table_user WHERE first_name LIKE :first AND last_name LIKE :last LIMIT 1")
     fun findByName(first: String, last: String): User
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(user: User)
+    suspend fun insert(user: User)
 
     @Insert
     fun insertAll(vararg users: User)

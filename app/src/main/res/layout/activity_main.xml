@@ -7,92 +7,100 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:text="Database User" />
-
-        <EditText
-            android:id="@+id/act_main_edUserFirstName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Input First Name"
-            android:importantForAutofill="no"
-            android:inputType="textCapWords"/>
+            android:orientation="vertical"
+            android:padding="10dp">
 
-        <EditText
-            android:id="@+id/act_main_edUserLastName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Input Last Name"
-            android:importantForAutofill="no"
-            android:inputType="textCapWords"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:text="Database User" />
 
-        <Button
-            android:id="@+id/act_main_btnSaveUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save User"
-            android:layout_gravity="end"/>
+            <EditText
+                android:id="@+id/act_main_edUserFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Input First Name"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/act_main_recyclerUser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:itemCount="5"
-            tools:listitem="@layout/item_user"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"/>
+            <EditText
+                android:id="@+id/act_main_edUserLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Input Last Name"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:text="Database Product"
-            android:layout_marginTop="80dp"/>
+            <Button
+                android:id="@+id/act_main_btnSaveUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save User"
+                android:layout_gravity="end"/>
 
-        <EditText
-            android:id="@+id/act_main_edProductTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Input Product Title"
-            android:importantForAutofill="no"
-            android:inputType="textCapWords"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/act_main_recyclerUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="5"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_user"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"/>
 
-        <EditText
-            android:id="@+id/act_main_edProductPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Input Product Price"
-            android:importantForAutofill="no"
-            android:inputType="number"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:text="Database Product"
+                android:layout_marginTop="80dp"/>
 
-        <Button
-            android:id="@+id/act_main_btnSaveProduct"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save Product"
-            android:layout_gravity="end"/>
+            <EditText
+                android:id="@+id/act_main_edProductTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Input Product Title"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/act_main_recyclerProduct"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:itemCount="5"
-            tools:listitem="@layout/item_product"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"/>
+            <EditText
+                android:id="@+id/act_main_edProductPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Input Product Price"
+                android:importantForAutofill="no"
+                android:inputType="number"/>
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/act_main_btnSaveProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save Product"
+                android:layout_gravity="end"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/act_main_recyclerProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="5"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_product"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
